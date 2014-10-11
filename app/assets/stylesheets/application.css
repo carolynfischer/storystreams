@@ -18,3 +18,60 @@ body { padding-top: 100px; }
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
+
+
+.sessions.new body{
+	
+	background: url('/assets/header-image-login.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.sessions.new .container {
+	
+	background-color: rgba(153, 153, 153, 0.5);
+	border-radius: 10px;
+	font-family: 'Satisfy', cursive;
+	font-size: 32px;
+
+}
+
+.sessions.new .login-form {
+	padding: 30px;	
+	position: relative;
+}
+
+.sessions.new .login-form input {
+
+	float: right;
+	background: #999;
+border: none;
+height: 40px;
+
+}
+.sessions.new .login-form input[type='submit']{
+	background: #FF9933;
+border: 5px solid white;
+padding: 18px 20px 35px 20px;
+border-radius: 50px;
+position: absolute;
+top: 45px;
+right: 0px;
+
+
+}
+
+.sessions.new .login-form .form-line {
+	width: 500px;
+	height: 65px;
+}
+
+.sessions.new .logo {
+	color: white;
+	font-family: 'Satisfy', cursive;
+	font-size: 45px;
+
+}
+
