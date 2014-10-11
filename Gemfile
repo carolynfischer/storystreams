@@ -38,5 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-#Use devise for authentication
+# Use devise for authentication
 gem 'devise', '3.4.0'
+
+# Picture uploader
+gem 'carrierwave', '0.10.0'

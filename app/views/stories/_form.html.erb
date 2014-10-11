@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :credits %><br>
+    <%= f.text_field :credits %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -26,10 +30,6 @@
   <div class="field">
     <%= f.label :tags %><br>
     <%= f.text_field :tags %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
   </div>
   <div class="actions">
     <%= f.submit %>
