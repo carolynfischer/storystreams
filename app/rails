@@ -1,0 +1,3 @@
+def self.up
+  remove_column :stories, :tags
+end
