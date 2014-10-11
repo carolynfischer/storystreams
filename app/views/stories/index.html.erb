@@ -1,31 +1,15 @@
 <h1>Story Streams</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Picture</th>
-      <th>Description</th>
-      <th>Tags</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
   <tbody>
-    <% @stories.each do |story| %>
-      <tr>
-        <td><%= story.title %></td>
+    <tr>
+      <% @stories.each do |story| %>
 	<td><%= link_to(image_tag(story.picture_url(:thumb)), story) if story.picture? %></td>
-        <td><%= story.description %></td>
-        <td>
-	<%= raw story.tag_list.map {|t| link_to t, tag_path(t), class: "tags" }.join (' ') %>
-        </td>
-        <td><%= story.date %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+      <% end %>
+    </tr>
+    <tr>
+    </tr>
   </tbody>
 </table>
 
