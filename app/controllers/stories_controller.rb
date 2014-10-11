@@ -16,7 +16,6 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @pictures = @story.pictures
-    @caption = @story.pictures
   end
 
   # GET /stories/new

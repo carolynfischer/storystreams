@@ -10,6 +10,7 @@
 
   <% @story.pictures.each do |picture| %>
     <%= image_tag(picture.url, with: "200", height: "200") %>
+    <%= picture.description %>
   <% end %>
 
   <% @story.tags.any? %>
