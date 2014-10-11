@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_action :set_story, only: [:show, :edit, :update, :destroy, :tagged]
 
   # GET /stories
   # GET /stories.json
@@ -71,4 +71,12 @@ class StoriesController < ApplicationController
     def story_params
       params.require(:story).permit(:title, :picture, :description, :tags, :date)
     end
+
+  def tagged
+    if params[:tag].present? 
+      @stories = Story.tagged_with(params[:tag])
+    else 
+      @stories = Story.postall
+    end  
+  end
 end

@@ -43,3 +43,9 @@ gem 'devise', '3.4.0'
 
 # Picture uploader
 gem 'carrierwave', '0.10.0'
+
+# Imagemagick for thumbnails
+gem 'mini_magick', '3.8.1'
+
+# Tagging
+gem 'acts-as-taggable-on', '~> 3.4'

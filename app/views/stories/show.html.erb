@@ -1,26 +1,20 @@
 <p>
-  <strong>Title:</strong>
-  <%= @story.title %>
+  <h1><%= @story.title %></h1>
 </p>
 
 <p>
-  <strong>Picture:</strong>
-  <%= @story.picture %>
+  <%= image_tag(@story.picture_url, :width => 600) if @story.picture.present? %>
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @story.description %>
 </p>
 
 <p>
-  <strong>Tags:</strong>
-  <%= @story.tags %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @story.date %>
+  <% @story.tags.any? %>
+    <% @story.tags.each do |tag| %>
+    <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_story_path(@story) %> |
