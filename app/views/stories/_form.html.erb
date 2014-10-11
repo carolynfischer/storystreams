@@ -15,13 +15,19 @@
     <h2><%= f.text_field :title, :placeholder => "Title" %></h2>
   </div>
   <div class="field">
-    <%= f.label "Upload" %><br>
-    <%= f.file_field :picture, multiple: true %>
-    <%= f.text_field :credits, :placeholder => "Credits" %>
+    <%= f.text_field :tag_list, :placeholder => "Tags separated by commas" %>
   </div>
   <div class="field">
-    <%=  f.text_area :description, :placeholder => "Story" %>
-    <%= f.text_field :tag_list, :placeholder => "Tags separated by commas" %>
+    <%= f.label "Upload" %><br>
+    <%= f.file_field :picture, :name => "story[picture][]" %>
+    <%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits" %>
+    <%= f.text_area :description, :name => "story[description][]", :placeholder => "Story" %>
+  </div>
+  <div class="field">
+    <%= f.label "Upload" %><br>
+    <%= f.file_field :picture, :name => "story[picture][]" %>
+    <%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits" %>
+    <%=  f.text_area :description, :name => "story[description][]", :placeholder => "Story" %>
   </div>
   <div class="actions">
     <%= f.submit %>

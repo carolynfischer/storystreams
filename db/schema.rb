@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011140415) do
+ActiveRecord::Schema.define(version: 20141011215237) do
 
   create_table "pictures", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20141011140415) do
     t.string   "caption"
     t.string   "filename"
     t.integer  "story_id"
+    t.string   "description"
+    t.string   "credits"
   end
 
   create_table "stories", force: true do |t|

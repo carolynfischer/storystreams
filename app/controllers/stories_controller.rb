@@ -33,18 +33,16 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
 
+
     respond_to do |format|
       if @story.save
-        params[:story][:picture].each do |image| 
+        params[:story][:picture].each_with_index do |image, i| 
           picture = Picture.create(:filename => image)
           picture.story = @story
+          picture.description = params[:story][:description][i]
+          picture.credits = params[:story][:credits][i]
           picture.save
         end
-#        params[:story][:caption].each do |singlestory| 
-#          caption = Picture.create(:caption => singlestory)
-#          caption.story = @story
-#          caption.save
-#        end
         format.html { redirect_to @story, notice: 'Story was successfully created.' }
         format.json { render :show, status: :created, location: @story }
       else
