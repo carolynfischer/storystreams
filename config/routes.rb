@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :stories
   match 'tagged', to: 'stories#tagged', :as => 'tagged', via: [:get, :post]
+  get 'tags/:tag', to: 'stories#index', as: :tag
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

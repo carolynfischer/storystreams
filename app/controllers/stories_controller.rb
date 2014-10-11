@@ -4,7 +4,11 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
+    @stories = if params[:tag]
+      Story.all.tagged_with(params[:tag])
+    else
+      Story.all
+    end
   end
 
   # GET /stories/1
