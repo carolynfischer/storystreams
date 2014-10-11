@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  before_action :set_story, only: [:show, :edit, :update, :destroy, :tagged]
+  before_action :set_story, only: [:show, :edit, :update, :destroy]
 
   # GET /stories
   # GET /stories.json
@@ -37,6 +37,14 @@ class StoriesController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag_list].present? 
+      @stories = Story.tagged_with(params[:tag_list])
+    else 
+      @stories = Story.all
+    end  
+  end
+
   # PATCH/PUT /stories/1
   # PATCH/PUT /stories/1.json
   def update
@@ -69,14 +77,7 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :picture, :description, :tags, :date)
+      params.require(:story).permit(:title, :picture, :description, :tag_list, :date)
     end
 
-  def tagged
-    if params[:tag].present? 
-      @stories = Story.tagged_with(params[:tag])
-    else 
-      @stories = Story.postall
-    end  
-  end
 end

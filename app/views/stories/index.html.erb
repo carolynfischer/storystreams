@@ -16,7 +16,7 @@
     <% @stories.each do |story| %>
       <tr>
         <td><%= story.title %></td>
-        <td><%= image_tag story.picture_url(:thumb) if story.picture? %></td>
+	<td><%= link_to(image_tag(story.picture_url(:thumb)), story) if story.picture? %></td>
         <td><%= story.description %></td>
         <td>
           <% story.tags.any? %>
@@ -25,7 +25,6 @@
           <% end %>
         </td>
         <td><%= story.date %></td>
-        <td><%= link_to 'Show', story %></td>
         <td><%= link_to 'Edit', edit_story_path(story) %></td>
         <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -36,3 +35,10 @@
 <br>
 
 <%= link_to 'New Story', new_story_path %>
+
+<div id="tag_cloud">
+  <% tag_cloud Story.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+Tags: <%= raw story.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
