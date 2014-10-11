@@ -16,6 +16,7 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @pictures = @story.pictures
+    @caption = @story.pictures
   end
 
   # GET /stories/new
@@ -39,6 +40,11 @@ class StoriesController < ApplicationController
           picture.story = @story
           picture.save
         end
+#        params[:story][:caption].each do |singlestory| 
+#          caption = Picture.create(:caption => singlestory)
+#          caption.story = @story
+#          caption.save
+#        end
         format.html { redirect_to @story, notice: 'Story was successfully created.' }
         format.json { render :show, status: :created, location: @story }
       else

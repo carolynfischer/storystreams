@@ -17,8 +17,12 @@
   <div class="field">
     <%= f.label "Upload" %><br>
     <%= f.file_field :picture, multiple: true %>
+    <%= f.text_field :credits, :placeholder => "Credits" %>
   </div>
-
+  <div class="field">
+    <% # f.text_area :description, :placeholder => "Story" %>
+    <%= f.text_field :tag_list, :placeholder => "Tags separated by commas" %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
