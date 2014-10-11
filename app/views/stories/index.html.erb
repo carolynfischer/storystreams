@@ -5,7 +5,8 @@
   <tbody>
     <tr>
       <% @stories.each do |story| %>
-	<td><%= link_to(image_tag(story.pictures[0].filename_url(:thumb)), story) if story.pictures? %></td>
+	<td><%= link_to(story.id, story) %></td>
+        <td><%= story.id %></td>
       <% end %>
     </tr>
     <tr>
@@ -16,4 +17,3 @@
 <br>
 
 <%= link_to 'New Story', new_story_path %>
-

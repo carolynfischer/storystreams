@@ -3,10 +3,6 @@
 </p>
 
 <p>
-  <%= image_tag(@story.picture_url, :width => 600) if @story.picture.present? %>
-</p>
-
-<p>
   <%= @story.description %>
 </p>
 
@@ -15,6 +11,12 @@
     <% @story.tags.each do |tag| %>
     <%= link_to tag.name, tagged_url(:tag => tag.name) %>
   <% end %>
+
+  <% @story.pictures.any? %>
+    <% @story.pictures.each do |picture| %>
+    <%= picture.filename %>
+  <% end %>
+
 </p>
 
 <%= link_to 'Edit', edit_story_path(@story) %> |
