@@ -12,9 +12,8 @@
     <%= link_to tag.name, tagged_url(:tag => tag.name) %>
   <% end %>
 
-  <% @story.pictures.any? %>
-    <% @story.pictures.each do |picture| %>
-    <%= picture.filename %>
+  <% @story.pictures.each do |picture| %>
+    <%= image_tag(picture.url, with: "200", height: "200") %>
   <% end %>
 
 </p>

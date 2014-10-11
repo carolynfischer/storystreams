@@ -5,8 +5,11 @@
   <tbody>
     <tr>
       <% @stories.each do |story| %>
+        <tr>
 	<td><%= link_to(story.id, story) %></td>
         <td><%= story.id %></td>
+        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
       <% end %>
     </tr>
     <tr>

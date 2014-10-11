@@ -14,6 +14,11 @@
   <div class="field">
     <h2><%= f.text_field :title, :placeholder => "Title" %></h2>
   </div>
+  <div class="field">
+    <%= f.label "Upload" %><br>
+    <%= f.file_field :picture, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
