@@ -9,30 +9,6 @@
 
   </br>
 
-  <div class='content'>
-    <% i = 0 %>
-    <% j = 0 %>
-    <% @stories.each do |story| %>
-      <% if i == 0  or i == 2 %>
-        <div class='row'>
-      <% end %>
-      <% if j%2 == 0 %>
-        <div class='col-md-6'>
-          <img src='/assets/landscape3.jpg' width='104.5%'/>
-        </div>
-      <% else %>
-        <div class='col-md-4'>
-          <img src='/assets/landscape3.jpg' width='106.5%'/>
-        </div>
-      <% end %>
-    <% end %>
-    <% i += 1 %>
-    <% if i == 2 %>
-      <% j += 1 %>
-    <% end %>
-    <% j = j%2 %>
-    <% i = i%5 %>
-  </div>
 
 <table>
 
@@ -41,8 +17,6 @@
     <tr>
       <center>
       <% @stories.each do |onestory| %>
-   
-
           <% onestory.pictures.each do |picture| %>
             <%= link_to(image_tag(picture.url, with: "200", height: "200"), onestory) %>
           <% end %>
