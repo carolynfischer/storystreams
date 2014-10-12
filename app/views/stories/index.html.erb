@@ -30,7 +30,7 @@
 
 <p style="text-align:center;"><%= link_to 'New Story', new_story_path, :class => "btn btn-warning" %></p>
 
-<div id="tag_cloud" style="width:100%;text-align: center;padding-bottom: 50px;padding-top: 50px;">
+<div id="tag_cloud" style="width:100%; text-align: center; padding-bottom: 50px; padding-top: 50px;">
   <% tag_cloud Story.tag_counts, %w[s m l] do |tag, css_class| %>
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
