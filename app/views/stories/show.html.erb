@@ -6,18 +6,21 @@
   <%= @story.description %>
 </p>
 
-<p>
 
+<div class='content'>
   <% @story.pictures.each do |picture| %>
-    <%= image_tag(picture.url, with: "200", height: "200") %>
-    <%= picture.description %>
+    <%= image_tag(picture.url, with: "500", height: "500") %><br><br>
+    <p><%= picture.description %></p>
   <% end %>
+</div>
 
+<div class='content'>
   <% @story.tags.any? %>
     <% @story.tags.each do |tag| %>
     <%= link_to tag.name, tagged_url(:tag => tag.name) %>
   <% end %>
-</p>
+</div>
 
+<br><br>
 <%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>
