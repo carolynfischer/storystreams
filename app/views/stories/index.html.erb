@@ -1,7 +1,7 @@
   <!-- header -->
-  <div class='content'>
+  <div class='content' style="position:relative;">
     <div class='row'>
-      <img src='/assets/header-image.png' width='100%' />
+      <img style="position: relative;" src='/assets/header-image.png' width='100%' />
     </div>
   </div>
 
@@ -12,7 +12,7 @@
   <tbody>
     <div class='content'>
     <tr>
-      <center>
+      <center style="margin-top:-125px;">
       <% @stories.each do |onestory| %>
           <% onestory.pictures.each do |picture| %>
             <%= link_to(image_tag(picture.url, with: "200", height: "200"), onestory) %>
