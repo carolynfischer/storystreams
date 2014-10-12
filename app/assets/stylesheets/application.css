@@ -14,13 +14,15 @@
  *= require_self
  */
 
-.show.container {
+.stories .container {
     width:100%;
 }
 
 .container2 {
     margin-top: 100px;
+    margin-left: 100px;
 }
+
 
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }

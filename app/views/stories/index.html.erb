@@ -1,3 +1,4 @@
+<div class="container2">
   <!-- header -->
   <div class='content'>
     <div class='row'>
@@ -34,4 +35,5 @@
   <% tag_cloud Story.tag_counts, %w[s m l] do |tag, css_class| %>
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
+</div>
 </div>
