@@ -2394,7 +2394,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-warning {
-  color: #ffffff;
+  color: #ffffff !important;
   background-color: #f0ad4e;
   border-color: #eea236;
 }
