@@ -2,12 +2,13 @@
 
 <div class="login-form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <h1 class="logo">Story Streams</h1>
-  <div class="form-line"><%= f.label :email %>
-  <%= f.email_field :email, autofocus: true %></div>
+  <legend class="logo" style="border:0;">Story Streams</legend>
+      <br/>
+  <div class="form-line"><%= f.label :email, :style=> "color:white;"%>
+  <%= f.email_field :email, autofocus: true, style: "width:300px;" %></div>
 
-  <div class="form-line"><%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off", placeholder:"**********" %>
+  <div class="form-line"><%= f.label :password, :style=> "color:white;" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder:"**********", style: "width:300px; background-color:#ccc !important"  %>
   </div>
   <div class="pull-left">
     <%= f.submit "Log in" %>
