@@ -1,4 +1,4 @@
-<%= form_for(@story) do |f| %>
+<%= form_for(@story, :class => "form-horizontal")  do |f| %>
   <% if @story.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
@@ -11,28 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <h2><%= f.text_field :title, :placeholder => "Title", :size=>"51" %></h2>
+  <div class="controls">
+    <h2><%= f.text_field :title, :placeholder => "Title", :size=>"50" %></h2>
   </div>
-  <div class="field">
+  <div class="controls">
     <%= f.text_field :tag_list, :placeholder => "Tags separated by commas", :size=>"100" %>
   </div>
+  <br/>
   <div class="picturesFields">
-      <div class="field">
-        <h4><%= f.label "Upload" %></h4>
+      <h4><%= f.label "Upload" %></h4>
+      <div class="controls">
         <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
         <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
         <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
+        <br/>
       </div>
   </div>
     <a href="javascript:;" id="addPicture">Add new picture</a>
-    <div class="field hidden addPictureFields">
-      <h4><%= f.label "Upload" %></h4>
+    <div class="controls hidden addPictureFields">
       <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
       <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
       <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
     </div>
-  <div class="actions">
-    <p><%= f.submit %></p>
+    <hr/>
+  <div class="form-actions">
+    <%= f.submit :class => "btn"%> &nbsp;
+    <%= link_to 'Go Back', stories_path %>
   </div>
 <% end %>
