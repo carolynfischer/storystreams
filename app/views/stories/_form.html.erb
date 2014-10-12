@@ -11,25 +11,27 @@
     </div>
   <% end %>
 
-
   <div class="field">
     <h2><%= f.text_field :title, :placeholder => "Title", :size=>"51" %></h2>
   </div>
   <div class="field">
     <%= f.text_field :tag_list, :placeholder => "Tags separated by commas", :size=>"100" %>
   </div>
-  <div class="field">
-    <h4><%= f.label "Upload" %></h4>
-    <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
-    <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
-    <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
+  <div class="picturesFields">
+      <div class="field">
+        <h4><%= f.label "Upload" %></h4>
+        <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
+        <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
+        <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
+      </div>
   </div>
-  <div class="field">
-    <h4><%= f.label "Upload" %></h4>
-    <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
-    <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
-    <p><%=  f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
-  </div>
+    <a href="javascript:;" id="addPicture">Add new picture</a>
+    <div class="field hidden addPictureFields">
+      <h4><%= f.label "Upload" %></h4>
+      <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
+      <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
+      <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
+    </div>
   <div class="actions">
     <p><%= f.submit %></p>
   </div>
