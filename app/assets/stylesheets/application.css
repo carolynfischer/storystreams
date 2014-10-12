@@ -18,10 +18,21 @@
     width:100%;
 }
 
-.container .container2 {
-    margin-top: 100px;
-    margin-left: 100px;
+/*.container .container2 {*/
+    /*margin-top: 100px;*/
+    /*margin-left: 100px;*/
+/*}*/
+
+.sessions.new .login-form {
+    background-color: rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    font-size: 15px;
+    width: 600px;
+    margin:0 auto;
+    margin-top: 200px;
+    height: 350px;
 }
+
 
 
 footer { margin-top: 100px; }
@@ -42,15 +53,14 @@ th { border-bottom: 1px solid #DDD; }
     color: white;
 }
 
-.sessions.new .container {
+/*.sessions.new .container {*/
 
-	background-color: rgba(153, 153, 153, 0.5);
-	border-radius: 10px;
+	/*background-color: rgba(204, 204, 204, 0.5);*/
+	/*border-radius: 10px;*/
 	/*font-family: 'Satisfy', cursive;*/
+    /*font-size: 15px;*/
 
-    font-size: 32px;
-
-}
+/*}*/
 
 .sessions.new .login-form {
 	padding: 30px;
@@ -60,7 +70,7 @@ th { border-bottom: 1px solid #DDD; }
 .sessions.new .login-form input {
 
 	float: right;
-	background: #999;
+	background: #cccccc;
 border: none;
 height: 40px;
 
@@ -70,11 +80,8 @@ height: 40px;
 border: 5px solid white;
 padding: 18px 20px 35px 20px;
 border-radius: 50px;
-position: absolute;
 top: 45px;
 right: 0px;
-
-
 }
 
 .sessions.new .login-form .form-line {

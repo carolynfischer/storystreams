@@ -1,13 +1,17 @@
-<h1 class="logo">Story Streams</h1>
+<div class="login_box">
+
 <div class="login-form">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h1 class="logo">Story Streams</h1>
   <div class="form-line"><%= f.label :email %>
   <%= f.email_field :email, autofocus: true %></div>
 
   <div class="form-line"><%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off", placeholder:"**********" %></div>
-  <div><%= f.submit "Log in" %></div>
+    <%= f.password_field :password, autocomplete: "off", placeholder:"**********" %>
+  </div>
+  <div class="pull-left">
+    <%= f.submit "Log in" %>
+  </div>
 <% end %>
 </div>
-
-
+</div>
