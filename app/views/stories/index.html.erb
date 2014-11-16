@@ -13,9 +13,8 @@
     <tr>
       <center style="margin-top:-125px;">
       <% @stories.each do |onestory| %>
-          <% onestory.pictures.each do |picture| %>
-            <%= link_to(image_tag(picture.url, with: "200", height: "200"), onestory) %>
-          <% end %>
+          <% picture = onestory.pictures.first %>
+          <%= link_to(image_tag(picture.url, with: "200", height: "200"), onestory) if picture %>
       <% end %>
       </center>
     </tr>
