@@ -3,4 +3,12 @@ class Story < ActiveRecord::Base
   has_many :pictures
   has_many :captions
   acts_as_taggable_on :tags
+
+  def cover_picture
+    Picture.find_by_id(self.cover_picture_id)
+  end
+
+  def cover_picture= picture
+    self.cover_picture_id = picture.id
+  end
 end

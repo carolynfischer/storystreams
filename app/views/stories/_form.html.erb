@@ -20,16 +20,18 @@
   <br/>
   <div class="picturesFields">
       <h4><%= f.label "Upload" %></h4>
-      <div class="controls">
+      <div class="controls story_picture_fields">
         <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
+        <p><%= radio_button_tag 'story[isCover]', 0 %> cover photo </p>
         <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
         <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
         <br/>
       </div>
   </div>
-    <a href="javascript:;" id="addPicture">Add new picture</a>
-    <div class="controls hidden addPictureFields">
+    <a href='#' onclick='addPicture();' id="addPicture">Add new picture</a>
+    <div class="controls story_picture_fields hidden addPictureFields">
       <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
+      <p><%= radio_button_tag 'story[isCover]', 1, nil, class: 'is_cover_rb'  %> cover photo </p>
       <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
       <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
     </div>

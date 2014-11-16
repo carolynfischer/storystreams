@@ -41,6 +41,10 @@ class StoriesController < ApplicationController
           picture.description = params[:story][:description][i]
           picture.credits = params[:story][:credits][i]
           picture.save
+          if i == params[:story][:isCover].to_i
+            @story.cover_picture = picture
+            @story.save
+          end
         end
         format.html { redirect_to @story, notice: 'Story was successfully created.' }
         format.json { render :show, status: :created, location: @story }
