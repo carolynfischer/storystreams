@@ -2,6 +2,7 @@ class Story < ActiveRecord::Base
   mount_uploader :picture, PictureUploader
   has_many :pictures
   has_many :captions
+  belongs_to :user
   acts_as_taggable_on :tags
 
   def cover_picture
