@@ -10,7 +10,7 @@
 
 <div class='text-center content'>
   <% @story.pictures.each do |picture| %>
-    <%= image_tag(picture.url, with: "500", height: "500") %><br>
+    <%= image_tag(picture.filename_url, with: "500", height: "500") %><br>
     <p><%= picture.description %></p>
     <br/>
   <% end %>
