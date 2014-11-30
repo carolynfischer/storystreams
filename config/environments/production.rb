@@ -77,7 +77,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mailer setup
-  config.action_mailer.default_url_options = { host: 'ec2-54-68-209-27.us-west-2.compute.amazonaws.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'storystreams.me', port: 80 }
 
   # Smtp mailer setup
   config.action_mailer.smtp_settings = {
