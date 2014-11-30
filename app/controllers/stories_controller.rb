@@ -2,6 +2,8 @@ class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   skip_before_filter :authenticate_user!, :only => [:index, :show]
+  before_filter :require_permission, only: :destroy
+
   # GET /stories
   # GET /stories.json
   def index
@@ -25,8 +27,8 @@ class StoriesController < ApplicationController
   end
 
   # GET /stories/1/edit
-  def edit
-  end
+#  def edit
+#  end
 
   # POST /stories
   # POST /stories.json
@@ -66,17 +68,17 @@ class StoriesController < ApplicationController
 
   # PATCH/PUT /stories/1
   # PATCH/PUT /stories/1.json
-  def update
-    respond_to do |format|
-      if @story.update(story_params)
-        format.html { redirect_to @story, notice: 'Story was successfully updated.' }
-        format.json { render :show, status: :ok, location: @story }
-      else
-        format.html { render :edit }
-        format.json { render json: @story.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+#  def update
+#    respond_to do |format|
+#      if @story.update(story_params)
+#        format.html { redirect_to @story, notice: 'Story was successfully updated.' }
+#        format.json { render :show, status: :ok, location: @story }
+#      else
+#        format.html { render :edit }
+#        format.json { render json: @story.errors, status: :unprocessable_entity }
+#      end
+#    end
+#  end
 
   # DELETE /stories/1
   # DELETE /stories/1.json
@@ -99,4 +101,9 @@ class StoriesController < ApplicationController
       params.require(:story).permit(:title, :description, :tag_list, :date)
     end
 
+    def require_permission
+      if current_user != Story.find(params[:id]).user
+        redirect_to root_path
+      end
+    end
 end
