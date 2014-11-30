@@ -17,3 +17,5 @@
 
 # Ignore .env file with token
 .env
+
+/Gemfile.lock
