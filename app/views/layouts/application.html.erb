@@ -40,19 +40,19 @@
   </div>
 </nav>
 
-<% if false %>
 <div class="container">
 
+<% if false %>
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
+<% end %>
 
   <%= yield %>
 </div>
-<% end %>
 
 <script src="/assets/bootstrap.js"></script>
 </body>
