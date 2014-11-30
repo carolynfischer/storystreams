@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
   # GET /stories
   # GET /stories.json
   def index
