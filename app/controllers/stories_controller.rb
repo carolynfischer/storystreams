@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_filter :store_url
   before_action :authenticate_user!
   skip_before_filter :authenticate_user!, :only => [:index, :show]
   before_filter :require_permission, only: :destroy
