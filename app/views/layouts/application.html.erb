@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="">
   <javascript src=""></javascript>
 </head>
-<body >
+<body class='<%= params[:controller] %> <%= "#{params[:controller].tr('/', '_')}-#{params[:action]}" %>' >
 <%= params[:name] %>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
