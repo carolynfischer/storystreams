@@ -1,8 +1,8 @@
 
   <!-- header -->
-  <div class='content' style="position:relative;margin-top:-20px">
+  <div class='content' style="position:relative;margin-top:50px">
     <div class='row'>
-      <img style="position: relative;" src='/assets/header-image.png' width='100%' />
+      <img style="position: relative;" src='/assets/header-image4.jpg' width='100%' />
     </div>
   </div>
 
@@ -11,7 +11,7 @@
   <tbody>
     <div class='content'>
     <tr>
-      <center style="margin-top:-125px;">
+      <center style="margin-top: 0px;">
       <% @stories.each do |onestory| %>
           <% picture = onestory.cover_picture || onestory.pictures.first %>
           <%= link_to(image_tag(picture.filename_url(:thumb), with: "200", height: "200"), onestory) if picture %>
