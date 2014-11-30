@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20141123170857) do
   create_table "pictures", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "caption"
+    t.text     "caption"
     t.string   "filename"
     t.integer  "story_id"
-    t.string   "description"
+    t.text     "description"
     t.string   "credits"
   end
 
