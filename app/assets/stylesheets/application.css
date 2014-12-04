@@ -33,12 +33,22 @@
     height: 320px;
 }
 
+.devise_registrations-new .login-form {
+    background-color: rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    font-size: 15px;
+    width: 600px;
+    margin:0 auto;
+    margin-top: 150px;
+    height: 370px;
+}
+
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 
 
-.devise_sessions-new {
+.devise_sessions-new, .devise_registrations-new {
 
 	background: url('/assets/header-image-login.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -51,6 +61,10 @@ th { border-bottom: 1px solid #DDD; }
     color: white;
 }
 
+.devise_registrations-new label {
+    color: white;
+}
+
 /*.devise_sessions-new .container {*/
 
 	/*background-color: rgba(204, 204, 204, 0.5);*/
@@ -60,26 +74,26 @@ th { border-bottom: 1px solid #DDD; }
 
 /*}*/
 
+/* login */
+
 .devise_sessions-new .login-form {
 	padding: 30px;
 	position: relative;
 }
 
 .devise_sessions-new .login-form input {
-
 	float: right;
 	background: #cccccc;
-border: none;
-height: 35px;
-
+  border: none;
+  height: 35px;
 }
 .devise_sessions-new .login-form input[type='submit']{
 	background: #FF9933;
-border: 5px solid white;
-padding: 18px 20px 35px 20px;
-border-radius: 50px;
-top: 45px;
-right: 0px;
+  border: 5px solid white;
+  padding: 18px 20px 35px 20px;
+  border-radius: 50px;
+  top: 45px;
+  right: 0px;
 }
 
 .devise_sessions-new .login-form .form-line {
@@ -89,7 +103,41 @@ right: 0px;
 
 .devise_sessions-new .logo {
 	color: white;
-    font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', cursive;
 	font-size: 45px;
 }
 
+
+/* registration */
+
+.devise_registrations-new .login-form {
+	padding: 30px;
+	position: relative;
+}
+
+.devise_registrations-new .login-form input {
+	float: right;
+	background: #cccccc;
+  border: none;
+  height: 35px;
+
+}
+.devise_registrations-new .login-form input[type='submit']{
+	background: #FF9933;
+  border: 5px solid white;
+  padding: 18px 20px 35px 20px;
+  border-radius: 50px;
+  top: 45px;
+  right: 0px;
+}
+
+.devise_registrations-new .login-form .form-line {
+	width: 540px;
+	height: 65px !important;
+}
+
+.devise_registrations-new .logo {
+	color: white;
+  font-family: 'Pacifico', cursive;
+	font-size: 45px;
+}

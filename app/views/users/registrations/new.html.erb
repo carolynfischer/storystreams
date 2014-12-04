@@ -1,18 +1,32 @@
-<h2>Sign up</h2>
+<div class="login_box">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class='login-form'>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <legend class="logo" style="border:0;text-align: center;">StoryStreams</legend>
+      <br/>
+    <% devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <div class='form-line'>
+      <%= f.label :email, style: "color: white; font-family: 'Satisfy', cursive; font-size:24px;" %>
+      <%= f.email_field :email, autofocus: true, style: 'width:300px;' %>
+    </div>
 
-  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+    <div class='form-line'>
+      <%= f.label :password, style: "color:white; font-family: 'Satisfy', cursive; font-size:24px;" %> 
+      <%= f.password_field :password, autocomplete: "off", style: 'width:300px; background-color: #ccc !important;' %>
+    </div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    <div class='form-line'>
+      <%= f.label :password_confirmation, style: "color:white; font-family: 'Satisfy', cursive; font-size:24px;" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", style: 'width:300px; background-color: #ccc !important;' %>
+    </div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+    <div class='pull-left'>
+      <div><%= f.submit "Sign up", style: "font-family: 'Pacifico', cursive;font-size:20px;" %></div>
+    </div>
+  <% end %>
 
-<%= render "users/shared/links" %>
+  <% render "users/shared/links" %>
+</div>
+
+</div>
