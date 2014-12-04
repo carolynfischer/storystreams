@@ -37,9 +37,16 @@
     </div>
   </div>
 
-  <a href='#' onclick='addPicture();' id="addPicture">
-    <img src='/assets/plus.png' />
-  </a>
+  <div class='row'>
+    <div class='col-md-1'>
+      <a href='#' onclick='addPicture();' id="addPicture">
+        <img src='/assets/plus.png' />
+      </a>
+    </div>
+    <div class='col-md-2'>
+      <%= f.submit class: "btn submit-story"%> 
+    </div>
+  </div>
 
   <div class="controls story_picture_fields hidden addPictureFields">
     <div class='row'>
@@ -60,8 +67,4 @@
 
   <hr/>
 
-  <div class="form-actions">
-    <%= f.submit :class => "btn"%> &nbsp;
-    <%= link_to 'Go Back', stories_path %>
-  </div>
 <% end %>

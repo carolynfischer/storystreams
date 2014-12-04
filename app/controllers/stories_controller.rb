@@ -49,7 +49,7 @@ class StoriesController < ApplicationController
             @story.cover_picture = picture
             @story.save
           end
-        end
+        end if params[:story][:picture]
         format.html { redirect_to @story, notice: 'Story was successfully created.' }
         format.json { render :show, status: :created, location: @story }
       else
