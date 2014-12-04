@@ -1,3 +1,51 @@
 // Place all the styles related to the pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.image-upload::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.image-upload::before {
+  content: '';
+  display: inline-block;
+  background: url('/assets/photo.png');//-webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  background-size: 100% 100%;
+  border: 3px solid #FFA500;
+  border-radius: 20px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  width: 150px;
+  height: 150px;
+}
+.image-upload:hover::before {
+  border-color: black;
+}
+.image-upload:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.image-upload {
+  color: transparent;
+}
+
+.image-story {
+  height: 100px;
+  background: #ccc;
+  border: none;
+}
+
+#addPicture img {
+  width: 70px;
+  height: 70px;
+  border: 7px solid #FFFFFF;
+  border-radius: 7px;
+}
+
+.stories-new .main.container {
+  background: #e3e3e3;
+}

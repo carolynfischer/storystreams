@@ -1,4 +1,4 @@
-<%= form_for(@story, :class => "form-horizontal")  do |f| %>
+<%= form_for(@story, :class => "form-horizontal dropzone1", id: 'new-story-image')  do |f| %>
   <% if @story.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
@@ -12,30 +12,54 @@
   <% end %>
 
   <div class="controls">
-    <h2><%= f.text_field :title, :placeholder => "Title", :size=>"50" %></h2>
+    <h2><%= f.text_field :title, :placeholder => "Title of the story...", :size=>"50" %></h2>
   </div>
   <div class="controls">
     <%= f.text_field :tag_list, :placeholder => "Tags separated by commas", :size=>"100" %>
   </div>
   <br/>
   <div class="picturesFields">
-      <h4><%= f.label "Upload" %></h4>
-      <div class="controls story_picture_fields">
-        <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
+    <div class="controls story_picture_fields">
+      <div class='row'>
+        <div class='col-md-2'>
+          <div class='dropzone dropzone-previews dz-default'>
+            <p><%= f.file_field :picture, :name => "story[picture][]", class: 'image-upload' %></p>
+          </div>
+          <p><%= radio_button_tag 'story[isCover]', 0 %> cover photo </p>
+        </div>
+        <div class='col-md-4'>
+          <p><% f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
+          <p>Your story:</p>
+          <p><%= f.text_area :description, :name => "story[description][]", :size=>"70", class: 'image-story' %></p>
+          <br/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href='#' onclick='addPicture();' id="addPicture">
+    <img src='/assets/plus.png' />
+  </a>
+
+  <div class="controls story_picture_fields hidden addPictureFields">
+    <div class='row'>
+      <div class='col-md-2'>
+        <div class='dropzone dropzone-previews dz-default'>
+          <p><%= f.file_field :picture, :name => "story[picture][]", class: 'image-upload' %></p>
+        </div>
         <p><%= radio_button_tag 'story[isCover]', 0 %> cover photo </p>
-        <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
-        <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
+      </div>
+      <div class='col-md-4'>
+        <p><% f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
+        <p>Your story:</p>
+        <p><%= f.text_area :description, :name => "story[description][]", :size=>"70", class: 'image-story' %></p>
         <br/>
       </div>
-  </div>
-    <a href='#' onclick='addPicture();' id="addPicture">Add new picture</a>
-    <div class="controls story_picture_fields hidden addPictureFields">
-      <p><%= f.file_field :picture, :name => "story[picture][]", :size=>"100" %></p>
-      <p><%= radio_button_tag 'story[isCover]', 1, nil, class: 'is_cover_rb'  %> cover photo </p>
-      <p><%= f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
-      <p><%= f.text_area :description, :name => "story[description][]", :placeholder => "Story", :size=>"100" %></p>
     </div>
-    <hr/>
+  </div>
+
+  <hr/>
+
   <div class="form-actions">
     <%= f.submit :class => "btn"%> &nbsp;
     <%= link_to 'Go Back', stories_path %>
