@@ -13,7 +13,7 @@
 
   <div class="controls">
     <h3><%= f.text_field :title, :placeholder => "Title of the story...", :size=>"50" %></h3>
-    <h3><%= f.text_field :tag_list, :placeholder => "Tags separated by commas", :size=>"50" %></h3>
+    <h3><%= f.text_field :tag_list, :placeholder => "Story tags separated by commas", :size=>"50" %></h3>
   </div>
   <br/>
   <div class="picturesFields">
@@ -23,7 +23,7 @@
           <div class='dropzone dropzone-previews dz-default'>
             <p><%= f.file_field :picture, :name => "story[picture][]", class: 'image-upload' %></p>
           </div>
-          <p><%= radio_button_tag 'story[isCover]', 0, :checked %> cover photo </p>
+          <p><%= radio_button_tag 'story[isCover]', 0, :checked %> Use as cover of the story </p>
         </div>
         <div class='col-md-4'>
           <p><% f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
@@ -38,7 +38,7 @@
   <div class='row'>
     <div class='col-md-1'>
       <a href='#' onclick='addPicture();' id="addPicture">
-        <img src='/assets/plus.png' />
+        <img src='/assets/plus.png' alt="Add another picture" title="Add another picture"/>
       </a>
     </div>
     <div class='col-md-2'>
@@ -52,7 +52,7 @@
         <div class='dropzone dropzone-previews dz-default'>
           <p><%= f.file_field :picture, :name => "story[picture][]", class: 'image-upload' %></p>
         </div>
-        <p><%= radio_button_tag 'story[isCover]', 0 %> cover photo </p>
+        <p><%= radio_button_tag 'story[isCover]', 0 %> Use as cover of the story </p>
       </div>
       <div class='col-md-4'>
         <p><% f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
