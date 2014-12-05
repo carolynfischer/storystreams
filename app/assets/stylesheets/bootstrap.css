@@ -38,7 +38,7 @@ template {
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Pacifico', cursive;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -89,7 +89,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, serif;
+  font-family: 'Pacifico', cursive;
   font-size: 1em;
 }
 
@@ -299,7 +299,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Pacifico', cursive;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -738,7 +738,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: 'Pacifico', cursive;
 }
 
 code {
@@ -2677,7 +2677,7 @@ input[type="button"].btn-block {
 }
 
 @font-face {
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Pacifico', cursive;
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
@@ -2686,7 +2686,7 @@ input[type="button"].btn-block {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Pacifico', cursive;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
   font-weight: normal;
@@ -6451,7 +6451,7 @@ button.close {
   height: 20px;
   margin-top: -10px;
   margin-left: -10px;
-  font-family: serif;
+  font-family: 'Pacifico', cursive;
 }
 
 .carousel-control .icon-prev:before {

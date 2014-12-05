@@ -23,7 +23,7 @@
           <div class='dropzone dropzone-previews dz-default'>
             <p><%= f.file_field :picture, :name => "story[picture][]", class: 'image-upload' %></p>
           </div>
-          <p><%= radio_button_tag 'story[isCover]', 0 %> cover photo </p>
+          <p><%= radio_button_tag 'story[isCover]', 0, :checked %> cover photo </p>
         </div>
         <div class='col-md-4'>
           <p><% f.text_field :credits, :name => "story[credits][]", :placeholder => "Credits", :size=>"100" %></p>
