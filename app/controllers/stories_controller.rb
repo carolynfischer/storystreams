@@ -43,7 +43,7 @@ class StoriesController < ApplicationController
           picture = Picture.create(:filename => image)
           picture.story = @story
           picture.description = params[:story][:description][i]
-          picture.credits = params[:story][:credits][i]
+          #picture.credits = params[:story][:credits][i]
           picture.save
           if i == params[:story][:isCover].to_i
             @story.cover_picture = picture
