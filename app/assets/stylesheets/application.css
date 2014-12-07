@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ body {
+    background-color: #cccccc;
+ }
+
 .stories .container {
     width:100%;
 }
@@ -21,6 +25,7 @@
 .container2 {
     margin-top: 100px;
     margin-left: 100px;
+    font-family: 'Pacifico', cursive;
 }
 
 .devise_sessions-new .login-form {
@@ -64,15 +69,6 @@ th { border-bottom: 1px solid #DDD; }
 .devise_registrations-new label {
     color: white;
 }
-
-/*.devise_sessions-new .container {*/
-
-	/*background-color: rgba(204, 204, 204, 0.5);*/
-	/*border-radius: 10px;*/
-	/*font-family: 'Satisfy', cursive;*/
-    /*font-size: 15px;*/
-
-/*}*/
 
 /* login */
 
