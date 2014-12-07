@@ -1,5 +1,5 @@
 <br/><br/><br/>
-<p >
+<p>
   <h1 class="text-center"><%= @story.title %></h1>
 </p>
 
@@ -7,14 +7,43 @@
   <%= @story.description %>
 </p>
 
+<div class='row'>
+  <div class='col-md-2'></div>
+  <div class='col-md-8'>
+    <div id='story-show-carousel' class='text-center content carousel slide' data-ride='carousel'>
+      <!-- Indicators -->
+      <ol class='carousel-indicators'>
+        <% @story.pictures.length.times do |i| %>
+          <li data-target='#story-show-carousel' data-slide-to='<%= i %>' class='active'></li>
+        <% end %>
+      </ol>
 
-<div class='text-center content'>
-  <% @story.pictures.each do |picture| %>
-    <%= image_tag(picture.filename_url, with: "500", height: "500") %><br>
-    <p><%= picture.description %></p>
-    <br/>
-  <% end %>
+      <!-- Wrapper for slides -->
+      <div class='carousel-inner' role='listbox'>
+        <% @story.pictures.each_with_index do |picture, index| %>
+          <div class='item <%= 'active' if index == 0 %>'>
+            <%= image_tag(picture.filename_url, height: '200px') %><br>
+            <div class='carousel-caption'>
+              <p><%= picture.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Controls -->
+      <a class='left carousel-control' href='#story-show-carousel' role='button' data-slide='prev'>
+        <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+        <span class='sr-only'>Previous</span>
+      </a>
+      <a class='right carousel-control' href='#story-show-carousel' role='button' data-slide='next'>
+        <span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
+        <span class='sr-only'>Next</span>
+      </a>
+    </div>
+  </div>
+  <div class='col-md-2'></div>
 </div>
+
 
 <div class='content'>
   <% @story.tags.any? %>

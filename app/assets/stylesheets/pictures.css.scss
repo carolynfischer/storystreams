@@ -61,3 +61,14 @@
   font-size: 18px;
   font-family: 'Pacifico', cursive;
 }
+
+#story-show-carousel .item {
+  height: 600px;
+}
+
+.item img {
+  max-height: 600px !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
