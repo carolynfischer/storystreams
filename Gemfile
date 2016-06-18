@@ -52,7 +52,7 @@ gem 'mini_magick', '3.8.1'
 # Tagging
 gem 'acts-as-taggable-on', '~> 3.4'
 
-# Manage application environment, ***REMOVED*** token
+# Manage application environment, secret token
 gem 'dotenv-rails'
 
 # Switch to postgresql

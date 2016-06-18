@@ -48,6 +48,6 @@ Rails.application.configure do
     :domain  => 'gmail.com',
     :authentication => :login,
     :user_name => "storystreams.me",
-    :password => "***REMOVED***"
+    :password => ""
   }
 end

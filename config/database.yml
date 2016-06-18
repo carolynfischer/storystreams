@@ -30,4 +30,4 @@ test:
 production:
   <<: *default
   database: storystreams
-  password: "***REMOVED***"
+  password: 
